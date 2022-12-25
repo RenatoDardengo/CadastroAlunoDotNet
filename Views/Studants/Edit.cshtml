@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h3 class="display-4">@ViewData["Titulo"]</h3>
+
+</div>
+<div>
+    <form method="post" action="/create" onsubmit=" return confirm('Confirmar o envio dos dados?')">
+        <div class="form-group">
+            <div class="row mt-5">
+                <div class="col">
+                    <label for="nome">Nome</label>
+                    <input type="text" value="@ViewBag.nome" class="form-control" id="nome" name="nome" aria-describedby="emailHelp">
+                </div>
+                <div class="col">
+                    <label for="matricula">Matrícula</label>
+                    <input type="password" class="form-control" id="matricula" name="matricula">
+                </div>
+
+            </div>
+
+        </div>
+        <div class="form-group">
+            <div class="row mt-5">
+                <div class="col">
+                    <label for="notas"> Primeira Nota</label>
+                    <input type="text" class="form-control" id="notas" name="notas">
+                </div>
+                <div class="col">
+                    <label for="notas"> Segunda Nota</label>
+                    <input type="text" class="form-control" id="notas" name="notas">
+                </div>
+                <div class="col">
+                    <label for="notas"> Terceira Nota</label>
+                    <input type="text" class="form-control" id="notas" name="notas">
+                </div>
+                <div class="col">
+                    <label for="notas"> Quarta Nota</label>
+                    <input type="text" class="form-control" id="notas" name="notas">
+                </div>
+
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-5">Cadastrar</button>
+    </form>
+</div>
