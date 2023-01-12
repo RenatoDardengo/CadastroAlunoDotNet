@@ -58,6 +58,9 @@ namespace cSharp_mvc.Models
         public void ApagarporId(){
             Aluno.DeletarPorId(this.Id);
         }
+        public void BuscarAlunoId(){
+            Aluno.BuscarPorID(this.Id);
+        }
 
         public void Salvar(){
             if (this.Id>0)

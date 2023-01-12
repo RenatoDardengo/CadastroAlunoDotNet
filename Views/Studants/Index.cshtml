@@ -31,7 +31,7 @@
                 <td>@aluno.Matricula</td>
                 <td>@aluno.StrNotas()</td>
                 <td>@aluno.Situacao()</td>
-                <td> <a onclick="window.location.href='/studants/edit'" class="btn btn-warning">Alterar </a>
+                <td> <a onclick="window.location.href='/studants/edit/@aluno.Id'" class="btn btn-warning">Alterar </a>
                     <a onclick="if(confirm('Confirmar a exclusão do registro @aluno.Id?')){window.location.href='/studants/@aluno.Id/delete'}" class="btn btn-danger">Excluir </a>
                 </td>
             </tr>

@@ -41,6 +41,33 @@ namespace cSharp_mvc.Models
 
 
         }
+        public static object BuscarPorID( int id){
+            var aluno = new Aluno();
+            SqlConnection sqlConn = new SqlConnection(connectionString());
+            sqlConn.Open();
+            SqlCommand sqlCommand = new SqlCommand($"select * from alunos where id={id}", sqlConn);
+            var reader = sqlCommand.ExecuteReader();
+            while (reader.Read()){
+                var notas = new List<double>();
+                string strNotas = reader["notas"].ToString();
+                foreach (var nota in strNotas.Split(","))
+                {
+                    if (nota.Trim() != "") notas.Add(Convert.ToDouble(nota));
+
+                }
+
+                    aluno.Id = Convert.ToInt32(reader["id"]);
+                    aluno.Nome = reader["nome"].ToString();
+                    aluno.Matricula = reader["matricula"].ToString();
+                    aluno.Notas = notas;
+                
+
+            }
+            sqlConn.Close();
+            sqlConn.Dispose();
+            return aluno;
+
+        }
         public static List<Aluno> Todos()
         {
             var alunos = new List<Aluno>();
